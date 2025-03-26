@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+
+    font-family: "Poppins";
+    
+    scrollbar-color: var(--main-color) #f0f0f0; /* thumb y track */
+    scrollbar-width: thin; /* Opciones: auto, thin o none */
+}
+
+:root {
+    --bg-color: #080808;
+    --second-bg-color:#131313;
+    --text-color: white; 
+    --main-color: #00eaff;
+}
+
+html {
+    font-size: 60%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+ 
+section {
+    min-height: 100vh;
+    padding: 10rem 12% 10rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+/* Ancho de la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 10px; /* Para barras verticales */
+    height: 10px; /* Para barras horizontales */
+  }
+  
+  /* Color de fondo de la barra */
+  ::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Color del fondo */
+    border-radius: 10px;
+  }
+  
+  /* Color de la parte móvil (thumb) */
+  ::-webkit-scrollbar-thumb {
+    background: var(--main-color); /* Color del thumb */
+    border-radius: 10px;
+  }
+  
+  /* Cambiar color al pasar el mouse */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--main-color);
+  }
+  

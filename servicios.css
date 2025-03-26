@@ -1,0 +1,71 @@
+.services {
+    background: var(--bg-color);
+    color: black;
+}   
+
+.services h2 {
+    margin-bottom: 5rem;
+    color: white;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.services-box {
+    background-color: var(--main-color);
+    height: 200px;
+    border-radius: 3rem;
+    border: 5px solid transparent;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.services-box:hover {
+    background: white;
+    color: black;
+    border: 5px solid var(--main-color);
+    transform: scale(1.03);
+}
+
+.services-box .services-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    max-height: 100px;
+    justify-content: left;
+    align-items: baseline;
+    padding: 3rem 3rem;
+}
+
+.services-info h4{
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2;
+}
+
+.services-info p {
+    font-size: 1.6rem;
+    font-weight: 300;
+    max-height: 1000px;
+    line-height: 1.7;
+    max-height: none;
+}
+
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+        gap: 3rem; /* Reducir el espacio entre las cajas */
+    }
+
+    .services-box {
+        height: 285px; /* Ajustar la altura de las cajas para que se adapten */
+    }
+
+    .services-info {
+        padding: 8rem; /* Reducir el padding en pantallas pequeñas para evitar que quede demasiado espacio */
+    }
+}

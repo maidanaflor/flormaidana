@@ -1,0 +1,181 @@
+.heading {
+    font-size: 8rem;
+    text-align: center;
+    margin: 5rem 0;
+}
+
+.educacion {
+    padding: 100px 15px;
+    background-color: var(--second-bg-color);
+}
+
+.educacion h2{
+    margin-bottom: 5rem;
+}
+
+.timeline-items{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.timeline-items::before{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: var(--main-color);
+    left: calc(50% - 1px);
+}
+
+.timeline-item{
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+}
+
+.timeline-item:last-child{
+    margin-bottom: 0;
+}
+
+.timeline-item:nth-last-child(odd) {
+    padding-right: calc(50% + 30px);
+    text-align: right;
+}
+
+.timeline-item:nth-last-child(even){
+    padding-left: calc(50% + 30px);
+}
+
+.timeline-dot{
+    height: 21px;
+    width: 21px;
+    background-color: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color);
+    position: absolute;
+    left: calc(50% - 8px);
+    border-radius: 50%;
+    top: 10px;
+}
+
+.timeline-date {
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    margin: 6px 0 15px; 
+}
+
+.timeline-content{
+    background-color: var(--bg-color);
+    border: 3px solid var(--main-color);
+    padding: 30px 50px;
+    border-radius: 4rem;
+    box-shadow: 0 0 10px var(--main-color);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.timeline-content:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.timeline-content h3 {
+    font-size: 20px;
+    color: white;
+    margin:  0 0 10px;
+    font-weight: 500;
+}
+
+.timeline-content p{
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+}
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 5rem; /* Reducir tamaño del título */
+        margin: 2rem 0; /* Reducir el margen */
+    }
+
+    .educacion {
+        padding: 50px 15px; /* Reducir el padding para pantallas pequeñas */
+    }
+
+    .timeline-items {
+        display: block; /* Colocar todos los elementos en una columna */
+        position: relative;
+        margin-left: 0; /* Eliminar margen izquierdo */
+    }
+
+    .timeline-items::before {
+        content: "";
+        position: absolute;
+        width: 5px;
+        height: 100%;
+        background-color: var(--main-color);
+        left: 50%; /* Línea en el medio */
+        top: 0;
+    }
+
+    .timeline-item {
+        width: 100%;
+        position: relative;
+        margin-bottom: 40px; /* Separación entre los items */
+        text-align: left; /* Alineación de todo a la izquierda */
+        padding-left: 0; /* Alineación de todo a la izquierda */
+        padding-right: 0;
+    }
+
+    .timeline-dot {
+        height: 21px;
+        width: 21px;
+        background-color: var(--main-color);
+        box-shadow: 0 0 25px var(--main-color),
+                    0 0 50px var(--main-color);
+        position: absolute;
+        left: calc(50% - 10px); /* Asegurando que el punto esté en el centro */
+        border-radius: 50%;
+        top: 0;
+    }
+
+    .timeline-date {
+        font-size: 20px;
+        font-weight: 800;
+        color: white;
+        margin: 6px 0 15px; /* Espaciado entre la fecha y el contenido */
+    }
+
+    .timeline-content {
+        background-color: var(--bg-color);
+        border: 3px solid var(--main-color);
+        padding: 20px 30px;
+        border-radius: 4rem;
+        box-shadow: 0 0 10px var(--main-color);
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        width: 100%; /* Asegurarse que ocupe todo el ancho disponible */
+        margin-left: 0; /* Alineado a la izquierda */
+        margin-right: 0; /* Alineado a la izquierda */
+    }
+
+    .timeline-content:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px var(--main-color);
+    }
+
+    .timeline-content h3 {
+        font-size: 18px; /* Reducir el tamaño del título */
+        margin-bottom: 10px;
+    }
+
+    .timeline-content p {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
