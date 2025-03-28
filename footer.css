@@ -64,3 +64,36 @@
     font-size: 15px;
     color: white;
 }
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 5vw 0;
+    }
+    
+    .footer ul {
+        flex-direction: column;
+        gap: 2vw;
+    }
+    
+    .footer ul li {
+        padding: 1vw 0;
+    }
+    
+    .footer .social a {
+        margin: 0 2vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer .social a {
+        width: 10vw;
+        height: 10vw;
+        line-height: 10vw;
+        font-size: 4vw;
+        margin: 0 3vw;
+    }
+    
+    .footer ul li a {
+        padding: 2vw 0;
+    }
+}

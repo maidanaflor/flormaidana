@@ -61,6 +61,10 @@
         padding: 2rem 5%;
     }
 
+    .logo {
+        font-size: 2rem;
+    }
+
     .navbar {
         position: absolute;
         top: 100%;
