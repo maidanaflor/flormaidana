@@ -1,0 +1,87 @@
+:root {
+  --main-color: #6e57e0;     
+  --text-color: #333;        
+  --bg-color: #fff;          
+  --hover-color: #4d3cb3;    
+  --menu-speed: 0.3s;        
+  --scrollbar-track: #f0f0f0; 
+  --box-shadow: 0 4px 15px rgba(110, 87, 224, 0.15);
+  --box-shadow-hover: 0 8px 25px rgba(110, 87, 224, 0.25);
+}
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, ul, ol, li,
+form, label, footer, header, nav, section {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Estilos para Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--main-color) var(--scrollbar-track);
+}
+
+body {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Estilos de scrollbar para navegadores WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hover-color);
+}
+
+/* Estilos para enlaces */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+:focus-visible {
+  outline: 2px solid var(--main-color);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Reset para listas */
+ul, ol {
+  list-style: none;
+}
+
+/* Reset para elementos de formulario */
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+/* Mejor práctica para imágenes */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

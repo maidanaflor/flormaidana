@@ -1,0 +1,162 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  background-color: var(--bg-color);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Estilos para el logo con imagen */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 45px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-img {
+  transform: scale(1.05);
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--main-color);
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.logo:hover .logo-text {
+  color: var(--hover-color);
+}
+
+/* Icono del menú móvil */
+#menu-icon {
+  font-size: 2.5rem;
+  color: var(--main-color);
+  cursor: pointer;
+  display: none;
+  transition: transform 0.3s ease;
+}
+
+#menu-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Navegación */
+.navbar {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  position: relative;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--main-color);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--main-color);
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Menú activo */
+.nav-link.active {
+  color: var(--main-color);
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu {
+    padding: 1rem 5%;
+  }
+  
+  #menu-icon {
+    display: block;
+  }
+  
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    width: 80%;
+    max-width: 300px;
+    background-color: var(--bg-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 0 0 1rem 0;
+    transition: left var(--menu-speed) ease;
+  }
+  
+  .navbar.active {
+    left: 0;
+  }
+  
+  .nav-link {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .nav-link:last-child {
+    border-bottom: none;
+  }
+  
+  .nav-link::after {
+    display: none;
+  }
+
+  /* Ajustes para el logo en móvil */
+  .logo-text {
+    display: none; /* Ocultamos el texto en móvil */
+  }
+
+  .logo-img {
+    height: 35px; /* Reducimos tamaño del logo */
+  }
+}
+
+@media (max-width: 480px) {
+  #menu-icon {
+    font-size: 2rem;
+  }
+
+  .logo-img {
+    height: 30px; /* Más pequeño para móviles muy pequeños */
+  }
+}
