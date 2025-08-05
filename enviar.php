@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $asunto = "Nueva consulta de $nombre $apellido";
     $cuerpo = "Nombre: $nombre $apellido\n";
     $cuerpo .= "Email: $email\n";
-    $cuerpo .= "Teléfono: $telefono\n\n";
+    $cuerpo .= "Teléfono: $telefono\n\n";   
     $cuerpo .= "Mensaje:\n$mensaje\n";
 
     // Cabeceras seguras

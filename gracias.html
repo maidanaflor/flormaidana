@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias por tu mensaje!</title>
+
+    <link rel="icon" href="flor.png" type="image/png">
+
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --main-color: #6e57e0;
+            --hover-color: #4d3cb3;
+        }
+
+        body {
+            background: url('fondo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .gracias-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            opacity: 0;
+            transition: all 0.8s ease;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gracias-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 86, 179, 0.1) 0%, transparent 70%);
+            animation: pulse 6s infinite linear;
+            z-index: -1;
+        }
+
+        .gracias-container.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .gracias-container h1 {
+            color: var(--main-color);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.8s ease 0.2s;
+        }
+
+        .gracias-container p {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 30px;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.8s ease 0.4s;
+        }
+
+        .gracias-container a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: var(--main-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.8s ease 0.6s, background-color 0.3s ease;
+            box-shadow: 0 5px 15px rgba(90, 0, 179, 0.4);
+        }
+
+        .gracias-container a:hover {
+            background-color: var(--hover-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(72, 0, 179, 0.6);
+        }
+
+        .active h1,
+        .active p,
+        .active a {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .check-icon {
+            font-size: 5rem;
+            color: #6e57e0;
+            margin-bottom: 20px;
+            display: inline-block;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.8s ease;
+        }
+
+        .active .check-icon {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.2; }
+            100% { transform: scale(0.8); opacity: 0.5; }
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #6e57e0;
+            opacity: 0;
+        }
+
+        @media (max-width: 768px) {
+            .gracias-container {
+                padding: 30px 20px;
+            }
+            
+            .gracias-container h1 {
+                font-size: 2rem;
+            }
+            
+            .gracias-container p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gracias-container">
+        <i class="fas fa-check-circle check-icon"></i>
+        <h1>¡Gracias por tu consulta!</h1>
+        <p>Hemos recibido tu mensaje y te responderemos a la brevedad.</p>
+        <a href="index.html">Volver al inicio</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Activar animaciones después de cargar la página
+            setTimeout(function() {
+                const container = document.querySelector('.gracias-container');
+                container.classList.add('active');
+                
+                // Crear confeti (opcional)
+                createConfetti();
+            }, 100);
+        });
+
+        function createConfetti() {
+            const colors = ['#4CAF50', '#2196F3', '#FFC107', '#FF5722', '#9C27B0'];
+            const container = document.querySelector('body');
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = -10 + 'px';
+                confetti.style.width = Math.random() * 10 + 5 + 'px';
+                confetti.style.height = Math.random() * 10 + 5 + 'px';
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                
+                container.appendChild(confetti);
+                
+                // Animación del confeti
+                animateConfetti(confetti);
+            }
+        }
+
+        function animateConfetti(element) {
+            const duration = Math.random() * 3 + 2;
+            const rotation = Math.random() * 360;
+            
+            element.style.opacity = '1';
+            element.style.transform = `translateY(${window.innerHeight}px) rotate(${rotation}deg)`;
+            element.style.transition = `all ${duration}s linear`;
+            
+            // Eliminar el elemento después de la animación
+            setTimeout(function() {
+                element.remove();
+            }, duration * 1000);
+        }
+    </script>
+
+</body>
+</html>

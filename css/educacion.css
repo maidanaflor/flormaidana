@@ -1,10 +1,31 @@
 .heading {
-    font-size: 4rem; /* Mejor responsividad con clamp() */
-    font-weight: 600;
-    margin-top: 1.5rem;
+    font-size: clamp(1.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin: 10rem 10rem;
     line-height: 1.1;
     text-align: center;
-    margin: 5rem 0;
+    color: #333;
+    position: relative;
+}
+
+.heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(90deg, #6e57e0, #8e7cff, #4d3cb3);
+    background-size: 300% 100%;
+    border-radius: 2px;
+    animation: gradientShift 6s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .educacion {
@@ -103,7 +124,7 @@
 /* Media queries para pantallas pequeñas */
 @media (max-width: 768px) {
     .heading {
-        font-size: 4rem;
+        font-size: 2rem;
         margin: 3rem 0;
     }
 
@@ -154,7 +175,7 @@
 /* Media queries para pantallas muy pequeñas */
 @media (max-width: 480px) {
     .heading {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     .timeline-content {

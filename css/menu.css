@@ -48,11 +48,15 @@
   color: var(--main-color);
   cursor: pointer;
   display: none;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 #menu-icon:hover {
   transform: scale(1.1);
+}
+
+.bx-x {
+    transform: rotate(180deg);
 }
 
 /* Navegación */
