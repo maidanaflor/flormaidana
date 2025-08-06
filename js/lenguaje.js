@@ -92,11 +92,16 @@ const translations = {
 
 // Función para cambiar el idioma
 function changeLanguage(lang) {
-    // Cambiar atributo lang del HTML
     document.documentElement.lang = lang;
     
-    // Guardar preferencia en localStorage
     localStorage.setItem('preferredLanguage', lang);
+
+    document.querySelectorAll('.language-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    
+    // Añadir clase active al botón seleccionado
+    document.querySelector(`.language-btn[data-lang="${lang}"]`).classList.add('active');
     
     // Traducir todos los elementos con clase 'tr'
     document.querySelectorAll('.tr').forEach(element => {
