@@ -1,0 +1,34 @@
+/* Agrega esto en tu archivo menu.css */
+.language-selector {
+    display: flex;
+    gap: 5px;
+    margin-left: 15px;
+}
+
+.language-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.language-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.language-btn img {
+    vertical-align: middle;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+/* Para versión móvil */
+@media (max-width: 768px) {
+    .navbar.active .language-selector {
+        display: flex;
+        justify-content: center;
+        margin: 15px 0;
+    }
+}

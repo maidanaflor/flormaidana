@@ -30,12 +30,14 @@
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/lenguaje.css">
 
 
     <script src="js/contacto.js"></script>
     <script src="js/type.js" defer></script>
     <script src="js/menu.js"></script>
     <script src="js/loader.js"></script>
+    <script src="js/lenguaje.js" defer ></script>
 
 </head>
 
@@ -49,27 +51,37 @@
     <header class="menu">
     <a href="#inicio" class="logo">
         <img src="flor.png" alt="Flor Maidana - Diseñadora web" class="logo-img">
-        <span class="logo-text">Diseño y desarrollo digital que impulsa tu marca</span>
+        <span class="logo-text tr" data-key="logo-text" >Diseño y Desarrollo digital que impulsa tu marca</span>
     </a>
 
     <i class='bx bx-menu' id="menu-icon"></i>
 
     <nav class="navbar">
-        <a href="#inicio" class="nav-link">Inicio</a>
-        <a href="#educacion" class="nav-link">Educacion</a>
-        <a href="#servicios" class="nav-link">Servicios</a>
-        <a href="#contacto" class="nav-link">Contacto</a>
+        <a href="#inicio" class="nav-link tr" data-key="home">Inicio</a>
+        <a href="#educacion" class="nav-link tr" data-key="education">Educacion</a>
+        <a href="#servicios" class="nav-link tr" data-key="services">Servicios</a>
+        <a href="#contacto" class="nav-link tr" data-key="contact">Contacto</a>
+
+        <div class="language-selector">
+            <button class="language-btn" data-lang="es">
+                <img src="https://flagcdn.com/w20/es.png" alt="Español" width="20" height="15">
+            </button>
+            <button class="language-btn" data-lang="en">
+                <img src="https://flagcdn.com/w20/gb.png" alt="English" width="20" height="15">
+            </button>
+        </div>
+
     </nav>
 </header>
 
     <section class="home" id="inicio">
       <div class="home-contenido">
-        <h1>Hola, soy <span>Flor!</span></h1>
+        <h1 class="tr" data-key="welcome">Hola, soy <span>Flor!</span></h1>
 
         <h3 class="text-animation">
         <span class="animated-text"></span></h3>
 
-        <p> Me apasiona crear sitios atractivos, funcionales y fáciles de usar, que reflejen la identidad de cada marca. 
+        <p class="tr" data-key="description"> Me apasiona crear sitios atractivos, funcionales y fáciles de usar, que reflejen la identidad de cada marca. 
            Trabajo con HTML, CSS y JavaScript, siempre buscando combinar creatividad y tecnología para que cada proyecto no solo se vea bien, 
            sino que funcione de forma eficiente.
            Además, como Community Manager, gestiono redes sociales de manera estratégica, creando contenido visual y mensajes que conectan con 
@@ -85,7 +97,7 @@
            </div>
 
            <div class="btn-group">
-            <a href="#contacto" class="btn">Contacto</a>
+            <a href="#contacto" class="btn tr" data-key="contact-btn">Contacto</a>
            </div>
       </div>
 
@@ -95,7 +107,7 @@
     </section>
 
     <section class="educacion" id="educacion">
-      <h2 class="heading">Educacion</h2>
+      <h2 class="heading tr" data-key="education-title">Educacion</h2>
 
       <div class="timeline-items">
 
@@ -103,8 +115,8 @@
           <div class="timeline-dot"></div>
             <div class="timeline-date">2025 - Actulidad</div>
             <div class="timeline-content">
-              <h3>Marketing Digital</h3>
-              <p>Planificación y ejecución de estrategias digitales orientadas a aumentar la 
+              <h3 class="tr" data-key="marketing">Marketing Digital</h3>
+              <p class="tr" data-key="marketing-desc">Planificación y ejecución de estrategias digitales orientadas a aumentar la 
                 visibilidad de marcas, atraer clientes y mejorar la comunicación online. Gestión de contenido, 
                 redes sociales, campañas y análisis de métricas para optimizar resultados</p>
             </div>
@@ -116,7 +128,7 @@
             <div class="timeline-date">2025 - Actulidad</div>
             <div class="timeline-content">
               <h3>UI/UX Designer</h3>
-              <p>Diseñadora UI/UX en formación, enfocada en crear experiencias 
+              <p class="tr" data-key="uiux-desc">Diseñadora UI/UX en formación, enfocada en crear experiencias 
                 visuales atractivas y funcionales. Apasionada por el diseño 
                 centrado en el usuario, la accesibilidad y la usabilidad para 
                 desarrollar soluciones intuitivas y efectivas.</p>
@@ -128,8 +140,8 @@
           <div class="timeline-dot"></div>
             <div class="timeline-date">2022 - 2024</div>
             <div class="timeline-content">
-              <h3>Desarrollador Front End</h3>
-              <p>Desarrolladora front-end con experiencia en sitios web dinámicos y atractivos. 
+              <h3 class="tr" data-key="frontend">Desarrollador Front End</h3>
+              <p class="tr" data-key="frontend-desc">Desarrolladora front-end con experiencia en sitios web dinámicos y atractivos. 
                 Dominio de HTML, CSS y JavaScript para diseños responsivos y navegación intuitiva. 
                 Conocimiento en herramientas y frameworks modernos para mejorar la interacción y 
                 el rendimiento web.</p>
@@ -141,8 +153,8 @@
           <div class="timeline-dot"> </div>
             <div class="timeline-date">2008 - 2015</div>
             <div class="timeline-content">
-              <h3>Tecnica en electronica</h3>
-              <p>Técnico en Electrónica con experiencia en programación de microcontroladores 
+              <h3 class="tr" data-key="electronics">Tecnica en electronica</h3>
+              <p class="tr" data-key="electronics-desc">Técnico en Electrónica con experiencia en programación de microcontroladores 
                 y sistemas embebidos. Conocimientos en C y Arduino para el desarrollo y 
                 optimización de soluciones electrónicas.</p>
             </div>
@@ -153,14 +165,14 @@
     </section>
 
     <section class="services" id="servicios">
-      <h2 class="heading">Servicios</h2>
+      <h2 class="heading tr" data-key="services-title">Servicios</h2>
 
       <div class="services-container">
 
         <div class="services-box">
           <div class="services-info">
-            <h4>Desarrollo Front-End</h4>
-            <p>Diseño y desarrollo de interfaces web interactivas utilizando HTML, 
+            <h4 class="tr" data-key="frontend-service">Desarrollo Front-End</h4>
+            <p class="tr" data-key="frontend-service-desc">Diseño y desarrollo de interfaces web interactivas utilizando HTML, 
               CSS y JavaScript, con enfoque en la creación de experiencias de usuario 
               optimizadas, accesibles y visualmente atractivas para todo tipo de dispositivos.</p>
           </div>
@@ -168,8 +180,8 @@
 
         <div class="services-box">
           <div class="services-info">
-            <h4>Diseño Web Responsivo y Personalizado</h4>
-            <p>Creación de sitios web adaptables a cualquier dispositivo, con un diseño 
+            <h4 class="tr" data-key="responsive">Diseño Web Responsivo y Personalizado</h4>
+            <p class="tr" data-key="responsive-desc">Creación de sitios web adaptables a cualquier dispositivo, con un diseño 
               único y personalizado que mejora la usabilidad y la interacción. Aseguro 
               que cada página funcione correctamente en todos los tamaños de pantalla.</p>
           </div>
@@ -177,8 +189,8 @@
 
         <div class="services-box">
           <div class="services-info">
-            <h4>Diseño y Optimización UI/UX</h4>
-            <p>Mejora de la experiencia de usuario y la interfaz de aplicaciones web y 
+            <h4 class="tr" data-key="uiux-service">Diseño y Optimización UI/UX</h4>
+            <p class="tr" data-key="uiux-service-desc">Mejora de la experiencia de usuario y la interfaz de aplicaciones web y 
               móviles, aplicando principios de diseño centrados en el usuario para 
               crear soluciones intuitivas, accesibles y atractivas.</p>
           </div>
@@ -186,8 +198,8 @@
 
         <div class="services-box">
           <div class="services-info">
-            <h4>Configuración de Redes Sociales</h4>
-            <p>Establecimiento y optimización de perfiles en plataformas sociales, 
+            <h4 class="tr" data-key="social">Configuración de Redes Sociales</h4>
+            <p class="tr" data-key="social-desc">Establecimiento y optimización de perfiles en plataformas sociales, 
               creando una identidad visual coherente y profesional que refuerza la 
               marca y conecta eficazmente con la audiencia objetivo.</p>
           </div>
@@ -198,36 +210,36 @@
 
     <section class="contacto" id="contacto">
      
-      <h2 class="heading"><span>Hagamos tu idea realidad!</span></h2>
+      <h2 class="heading tr" data-key="contact-title"><span>Hagamos tu idea realidad!</span></h2>
       
       <form id="ContactForm" class="contact-form" action="enviar.php" method="POST">
                 <div class="form-group">
-                    <label for="Nombre">Nombre</label>
+                    <label for="Nombre" class="tr" data-key="name">Nombre</label>
                     <input type="text" id="Nombre" name="nombre" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="Apellido">Apellido</label>
+                    <label for="Apellido" class="tr" data-key="lastname">Apellido</label>
                     <input type="text" id="Apellido" name="apellido" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="Email">Correo electrónico</label>
+                    <label for="Email" class="tr" data-key="email">Correo electrónico</label>
                     <input type="email" id="Email" name="email" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="Telefono">Teléfono</label>
+                    <label for="Telefono" class="tr" data-key="phone">Teléfono</label>
                     <input type="tel" id="Telefono" name="telefono" required>
                 </div>
                 
                 <div class="form-group full-width">
-                    <label for="Mensaje">Mensaje</label>
+                    <label for="Mensaje" class="tr" data-key="message">Mensaje</label>
                     <textarea id="Mensaje" name="mensaje" required></textarea>
                 </div>
                 
                 <div class="form-group full-width" style="text-align: center;">
-                    <button type="submit" class="submit-btn">Enviar</button>
+                    <button type="submit" class="submit-btn tr" data-key="submit">Enviar</button>
                 </div>
             </form>
 
@@ -247,7 +259,7 @@
       <ul class="list">
 
         <p class="copyright">
-          &copy; 2025 Florencia Maidana | Diseñadora Web Freelance
+          &copy; 2025 Florencia Maidana | Freelance Web Designer
         </p>
 
       </ul>
